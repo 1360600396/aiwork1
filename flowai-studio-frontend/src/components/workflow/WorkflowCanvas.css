@@ -1,0 +1,134 @@
+/* ============================================================
+   WorkflowCanvas — ReactFlow canvas styles
+   ============================================================ */
+.workflow-canvas {
+  height: 100%;
+  width: 100%;
+  background: var(--c-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Node base ---- */
+.react-flow__node {
+  border-radius: 10px;
+  border: 1px solid var(--c-border);
+  background: var(--c-bg-card);
+  box-shadow: var(--c-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.react-flow__node:hover {
+  box-shadow: var(--c-shadow-md);
+}
+
+.react-flow__node.selected {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.18);
+}
+
+/* ---- Node status indicator ---- */
+.node-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.node-status.pending {
+  background: var(--c-orange);
+}
+
+.node-status.running {
+  background: var(--c-blue);
+  animation: pulse 1.5s infinite;
+}
+
+.node-status.success {
+  background: var(--c-green);
+}
+
+.node-status.failed {
+  background: var(--c-red);
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* ---- Node content ---- */
+.node-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--c-text-primary);
+}
+
+.node-content {
+  font-size: 12px;
+  color: var(--c-text-tertiary);
+  padding: 2px 0;
+}
+
+/* ---- Edges ---- */
+.react-flow__edge-path {
+  stroke: var(--c-border);
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--c-accent);
+}
+
+.react-flow__edge-label {
+  background: var(--c-bg-card);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-secondary);
+}
+
+/* ---- Handles ---- */
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--c-accent);
+  background: var(--c-bg-card);
+  border-radius: 50%;
+}
+
+.react-flow__handle:hover {
+  background: var(--c-accent-light);
+}
+
+/* ---- Controls & MiniMap ---- */
+.react-flow__controls {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  box-shadow: var(--c-shadow-sm);
+}
+
+.react-flow__controls-button {
+  background: var(--c-bg-card);
+  border-bottom: 1px solid var(--c-border-light);
+  fill: var(--c-text-secondary);
+}
+
+.react-flow__controls-button:hover {
+  background: var(--c-accent-light);
+  fill: var(--c-accent);
+}
+
+.react-flow__minimap {
+  border-radius: 8px;
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+}

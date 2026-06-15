@@ -1,0 +1,86 @@
+/* ============================================================
+   NodePanel — Node library sidebar
+   ============================================================ */
+.node-panel {
+  width: 200px;
+  height: 100%;
+  background: var(--c-bg-card);
+  border-right: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.node-panel-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--c-border-light);
+}
+
+.node-panel-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.node-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* Node item (draggable chip) */
+.node-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  background: var(--c-bg-card);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: grab;
+  transition: all 0.15s ease;
+}
+
+.node-item:hover {
+  background: var(--c-accent-light);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.node-item:active {
+  cursor: grabbing;
+  transform: scale(0.97);
+}
+
+.node-item-icon {
+  font-size: 15px;
+  margin-right: 10px;
+  display: flex;
+}
+
+.node-item-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-text-primary);
+}
+
+/* ---- Scrollbar ---- */
+.node-panel-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.node-panel-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.node-panel-content::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 2px;
+}
+
+.node-panel-content::-webkit-scrollbar-thumb:hover {
+  background: var(--c-text-tertiary);
+}
